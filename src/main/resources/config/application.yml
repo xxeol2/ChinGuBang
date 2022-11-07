@@ -1,10 +1,14 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
+        hbm2ddl:
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
         format_sql: true
+      connection:
+        charSet: UTF-8
     show-sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
