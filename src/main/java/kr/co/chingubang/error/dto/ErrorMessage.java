@@ -18,7 +18,8 @@ public enum ErrorMessage {
 	/**
 	 * Community Error Message
 	 */
-	NO_EXISTS_CATEGORY_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 카테고리입니다.");
+	NO_EXISTS_CATEGORY_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 카테고리입니다."),
+	NO_EXISTS_COMMUNITY_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 커뮤니티입니다.");
 
 	private final HttpStatus status;
 	private final String description;
