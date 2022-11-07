@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import kr.co.chingubang.common.dto.ResponseDto;
-import kr.co.chingubang.community.application.CommunityService;
 import kr.co.chingubang.community.dto.request.CommunityCreateRequest;
 import kr.co.chingubang.community.dto.response.CommunityCreateResponse;
 import kr.co.chingubang.community.facade.CommunityFacade;
@@ -23,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CommunityController {
 	private final CommunityFacade communityFacade;
-	private final CommunityService communityService;
 
 	@ApiOperation(value = "커뮤니티 글 작성 API")
 	@PostMapping("/{categoryId}")
