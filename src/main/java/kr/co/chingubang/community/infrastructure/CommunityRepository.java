@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import kr.co.chingubang.community.domain.Community;
 
 @Repository
-public class CommunityRepository extends JpaRepository<Community, Long> {
+public interface CommunityRepository extends JpaRepository<Community, Long> {
 }
