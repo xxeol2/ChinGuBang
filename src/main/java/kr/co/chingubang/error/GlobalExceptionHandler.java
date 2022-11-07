@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import kr.co.chingubang.error.dto.ErrorDto;
 import kr.co.chingubang.error.exception.BusinessException;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -22,9 +20,6 @@ public class GlobalExceptionHandler {
 		final BusinessException e,
 		final HttpServletRequest request
 	) {
-		log.error("BusinessException -> {} {}", e.getErrorMessage(), e.getCause());
-		log.error("Request url {}", request.getRequestURL());
-
 		return ResponseEntity
 			.status(e.getErrorMessage().getStatus())
 			.body(
@@ -41,9 +36,6 @@ public class GlobalExceptionHandler {
 	) {
 		var errorMessage =
 			e.getCause().toString() + "\n" + e.getLocalizedMessage() + Arrays.toString(e.getStackTrace());
-
-		log.error("Exception -> {} | {}", e.getMessage(), errorMessage);
-		log.error("Request url {}", request.getRequestURL());
 
 		return ResponseEntity
 			.status(HttpStatus.BAD_REQUEST)
