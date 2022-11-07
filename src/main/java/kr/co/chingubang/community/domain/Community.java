@@ -25,14 +25,14 @@ public class Community extends BaseEntity {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "userId")
+	@JoinColumn(name = "user_id")
 	private User user;
 
 	@Embedded
 	private CommunityContent content;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "categoryId")
+	@JoinColumn(name = "category_id")
 	private Category category;
 
 	@Builder
